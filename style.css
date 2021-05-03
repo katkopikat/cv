@@ -1,0 +1,280 @@
+body {
+  background-color: #0e1113;
+  color:#FAFAFA;
+  font-family: 'Spartan', sans-serif;
+}
+
+h1 {
+  font-size: 3.3rem;
+  margin: 0;
+}
+
+main {
+  margin-left: 3.5rem;
+}
+
+.greeting__wrapper {
+  margin-top: 1rem;
+}
+
+.greeting__hello {
+  color: #05FDD8;
+  padding-top: 1rem;
+}
+
+
+.greeting__prof--fe {
+  white-space: nowrap;
+  display: flex;
+}
+
+
+.greeting__name:after, .apostr:after, .greeting__developer:after  {
+  content: '.';
+}
+
+.greeting__developer:after {
+  display: contents;
+}
+
+
+.apostr:after {
+  position: relative;
+  top: -2rem;
+  color: #eff6ff;
+  font-family: monospace;
+}
+
+.greeting__developer--wrapper {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 320px;
+}
+
+.greeting__developer{
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting__comment {
+  font-weight: 300;
+  font-family: 'Overpass Mono', monospace;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #FD2155;
+  margin-top: 0.4rem;
+  padding-right: 0.5rem;
+}
+
+.cv__button {
+  font-family: 'Overpass Mono', monospace;
+  color: #0e1113;
+  border: none;
+  padding: 0.4rem 2.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #05FDD8 0%, #05FDD8 50%, #FD2155 50%, #FD2155 100% );
+  background-size: 200%;
+  background-position-x: 100%;
+  transition: background .3s ease-out;
+}
+
+.cv__button--open {
+  background-image: linear-gradient(90deg, #05FDD8 0%, #05FDD8 50%, #FD2155 50%, #FD2155 100% );
+  margin-right: 1rem;
+}
+
+.cv__button--download {
+  background-image: linear-gradient(90deg, #FD2155 0%, #FD2155 50%,  #05FDD8 50%, #05FDD8 100%);
+}
+
+.cv__button:hover {
+  background-position-x: 0;
+}
+
+/* pseudo code start*/
+.greeting__wrapper:before {
+  content: 'const CV = () => (\a<> \a \00a0<h1 className=”cv__greeting”>';
+  text-indent: 1rem hanging ;
+  line-height: 1.5rem;
+  margin-left: -2rem;
+}
+
+.greeting__wrapper:after, .greeting__btns:after, .greeting__wrapper:before {
+  font-family: 'Overpass Mono', monospace;
+  white-space: pre;
+  color: #1f2d35;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.greeting__hello:before, .greeting__hello:after {
+  font-family: 'Overpass Mono', monospace;
+}
+
+.greeting__hello:before{
+  content: '<';
+}
+
+.greeting__hello:after{
+  content: '>';
+}
+
+.greeting__prof--js:after, .greeting__name:after, .greeting__developer:after  {
+  color: #FD2155;
+}
+
+
+.greeting__prof--js:after {
+  content: '|';
+  padding-left: 1rem;
+}
+
+/* pseudo code end*/
+
+.greeting__wrapper:after {
+  content: '</h1> \a <div className=”cv__btns”>';
+  line-height: 1.5rem;
+
+}
+
+.greeting__btns:after {
+  content: '    </div>\a    </>\a   )\a}';
+  display: block;
+  white-space: pre;
+  margin-top: 1rem;
+  margin-left: -2rem;
+  line-height: 1.5rem;
+}
+
+.paralax-bg {
+    position: absolute;
+    top: 0;
+    color: #05fdd8;
+    font-size: 1.5rem;
+    opacity: 0.4;
+    right: 0;
+    font-family: 'Overpass Mono', monospace;
+}
+
+.paralax-bg > span {
+  position: absolute;
+}
+
+.paralax-bg > span:first-of-type {
+  top: 10rem;
+  right: 31vw;
+}
+
+.paralax-bg > span:nth-of-type(2) {
+  top: 7vh;
+  right: 17vw;
+  color: #fd2155;
+  opacity: 0.7;
+}
+
+.paralax-bg > span:nth-of-type(3) {
+  top: 40vh;
+  right: 10vw;
+  opacity: 0.5;
+}
+
+.paralax-bg > span:nth-of-type(4) {
+  top: 80vh;
+  right: 57vw;
+}
+
+.paralax-bg > span:nth-of-type(5) {
+  right: 40vw;
+  top: 58vh;
+  color: #fd2155;
+}
+
+.paralax-bg > span:nth-of-type(6) {
+  right: 7vw;
+  top: 70vh;
+  opacity: 0.5;
+  color: #fd2155;
+}
+
+.paralax-bg > span:last-of-type {
+  top: 87vh;
+  right: 19vw;
+  width: max-content;
+  opacity: 0.3;
+}
+
+
+@media (max-width: 700px) {
+  
+  .greeting__prof--fe {
+    flex-direction: column;
+  }
+
+  .greeting__developer--wrapper {
+    justify-content: flex-start;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .paralax-bg {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .apostr:after {
+    top: -1.3rem;
+  }
+
+  .paralax-bg {
+    font-size: 1rem;
+  }
+
+  .cv__button {
+    padding: 0.4rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .paralax-bg {
+    opacity: 0.1;
+  }
+
+  main {
+    margin-left: 2rem;
+  }
+
+  .greeting__wrapper:after, .greeting__btns:after, .greeting__wrapper:before {
+    font-size: 0.7rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .greeting__comment {
+    font-size: 0.7rem;
+  }
+
+  .apostr:after {
+    top: -1rem;
+  }
+
+  .cv__button {
+    padding: 0.3rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+}
